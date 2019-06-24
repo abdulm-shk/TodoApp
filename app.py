@@ -35,8 +35,8 @@ def tasks():
 @app.route("/completed")
 def completed():
         todos_1 = todos.find({"done":"yes"})
-        a2 = "active"
-        return render_template('index.html', a2=a2, todos=todos_1, t=title, h=heading)
+        a3 = "active"
+        return render_template('index.html', a3=a3, todos=todos_1, t=title, h=heading)
 
 @app.route("/done")
 def done():
