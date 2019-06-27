@@ -92,5 +92,13 @@ def search():
 
     return render_template('searchlist.html', todos=todos_l, t=title, h=heading)
 
+@app.route("/search2", methods=['GET'])
+def search2():
+    key = request.values.get("key")
+    todos_l = todos.find({"$or": [{"desc":{'$regex': key}},{"name":{'$regex': key}}]})
+
+    return render_template('searchlist.html', todos=todos_l, t=title, h=heading)
+
+
 if __name__ == "__main__":
     app.run()
